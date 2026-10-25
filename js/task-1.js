@@ -23,6 +23,8 @@ console.log(makeTransaction(10, 5000, 8000)); // "Insufficient funds!"
 console.log(makeTransaction(8, 2000, 10000)); // "Insufficient funds!"
 console.log(makeTransaction(10, 500, 5000)); // "You ordered 10 droids worth 5000 credits!"
 */
+
+/*
 const getUserNames = users => 
     users.map(userName => userName.name);
 
@@ -66,3 +68,35 @@ console.log(
 ])
 ); // ["Moore Hensley", "Sharlene Bush", "Ross Vazquez", "Elma Head", "Carey Barr", "Blackburn Dotson", "Sheree Anthony"]
 
+*/
+
+const customer = {
+  username: "Mango",
+  balance: 24000,
+  discount: 0.1,
+  orders: ["Burger", "Pizza", "Salad"],
+  // Change code below this line
+  getBalance() {
+    return this.balance;
+  },
+  getDiscount() {
+    return this.discount;
+  },
+  setDiscount(value) {
+    this.discount = value;
+  },
+  getOrders() {
+    return this.orders;
+  },
+  addOrder(cost, order) {
+    this.balance -= cost - cost * this.discount;
+    this.orders.push(order);
+  },
+  // Change code above this line
+};
+
+customer.setDiscount(0.15);
+console.log(customer.getDiscount()); // 0.15
+customer.addOrder(5000, "Steak");
+console.log(customer.getBalance()); // 19750
+console.log(customer.getOrders()); // ["Burger", "Pizza", "Salad", "Steak"]
