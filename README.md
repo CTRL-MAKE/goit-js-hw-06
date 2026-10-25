@@ -1,2 +1,2 @@
-# goit-js-hw-05
-GoIt_Homework_JS-5
+# goit-js-hw-06
+GoIt_Homework_JS-6
